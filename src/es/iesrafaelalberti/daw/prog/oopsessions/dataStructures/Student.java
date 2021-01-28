@@ -43,4 +43,14 @@ public class Student { // GRASP: maestro
                 ", qualification=" + qualification +
                 '}';
     }
+
+    @Override
+    public int hashCode() {
+        return surname.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return ((Student) obj).getName().equals(this.getName()) && ((Student) obj).getSurname().equals(this.getSurname());
+    }
 }

@@ -1,7 +1,7 @@
 package es.iesrafaelalberti.daw.prog.oopsessions.dataStructures;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.function.Predicate;
 
 public class TestArrays {
     int[] qualifications = {2, 4, 9, 1}; // asignación estática, se declara antes de ejecutar nada
@@ -9,6 +9,8 @@ public class TestArrays {
                            new Student("Luis", "González", 2.3f)
                          };
     List<Student> studentList = new ArrayList<>();
+
+    Set<Student> studentSet = new HashSet<>();
 
     public TestArrays() {
         // Tamaño de un array: qualifications.length
@@ -19,13 +21,32 @@ public class TestArrays {
 //            valor = 4;
 //        }
 //        recorreQualifications();
-        recorreStudentList();
-        studentList.add(new Student("Luis", "Gómez", 3.2f));
-        recorreStudentList();
+        //recorreStudentList();
+        studentList.add(new Student("Luis", "Gómez", 4.98f));
+        studentList.add(new Student("Luisa", "Gomeza", 8.0f));
+        studentList.add(new Student("Mario", "Pérez", 4.9f));
+        studentList.add(new Student("María", "Pereza", 6.2f));
+        //recorreStudentList();
+        studentList.removeIf( new Predicate() {
+            @Override
+            public boolean test(Object o) {
+                return ((Student) o).getName().equals("Mario") || ((Student) o).getName().equals("María");
+            }
+        });
+        List<Student> tmp = new ArrayList<>();
+        tmp.add(new Student("g", "t", 3.0f));
+        tmp.add(new Student("fg", "ft", 3.0f));
+        studentList.addAll(tmp);
+        studentList.contains(new Student("g", "t", 3.0f));
+
+
+
+
+        studentList.clear();
         for(Student student:studentList) {
             student.setQualification(5.1f);
         }
-        recorreStudentList();
+        //recorreStudentList();
 
     }
 
