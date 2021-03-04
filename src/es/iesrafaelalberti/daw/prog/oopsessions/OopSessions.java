@@ -22,6 +22,6 @@ public class OopSessions {
     }
 
     public static void testArrays() {
-        TestArrays myTestArray = new TestArrays();
+        TestArrays myTestArray = new TestArrays(true);
     }
 }

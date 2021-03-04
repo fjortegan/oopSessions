@@ -51,6 +51,8 @@ public class Student { // GRASP: maestro
 
     @Override
     public boolean equals(Object obj) {
-        return ((Student) obj).getName().equals(this.getName()) && ((Student) obj).getSurname().equals(this.getSurname());
+        System.out.println("Estamos comparando dos objetos de la clase Student");
+        Student otroStudent = (Student) obj;
+        return otroStudent.getName().equals(this.getName()) && otroStudent.getSurname().equals(this.getSurname());
     }
 }

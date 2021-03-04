@@ -50,6 +50,15 @@ public class TestArrays {
 
     }
 
+    public TestArrays(boolean ce) {
+        Student student1 = new Student("Luis", "Polo", 3.0f);
+        Student student2 = new Student("Luis", "Polo", 8.0f);
+        if(student1.equals(student2)) {
+            System.out.println("Son iguales!!!!!!");
+        }
+
+    }
+
     public void recorreQualifications() {
         // Recorrido por índice
         System.out.println("Recorrido por índice:");
